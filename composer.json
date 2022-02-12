@@ -1,0 +1,28 @@
+{
+    "name": "ryan/desktop",
+    "authors": [
+        {
+            "name": "Ryan",
+            "email": "apple040285.1@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Ryan\\Desktop\\": "src/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "5.x-dev"
+        },
+        "laravel": {
+            "providers": [
+                "Ryan\\Desktop\\DesktopServiceProvider"
+            ],
+            "aliases": {
+                "Desktop": "Ryan\\Desktop\\Facades\\Desktop"
+            }
+        }
+    }
+}
