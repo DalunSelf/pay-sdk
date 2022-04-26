@@ -3,7 +3,7 @@
 namespace Ryan\Desktop\Facades;
 
 use Illuminate\Support\Facades\Facade;
-use Laravel\Socialite\Contracts\Factory;
+use Ryan\Desktop\Contracts\Factory;
 
 /**
  * @method static \Laravel\Socialite\Contracts\Provider driver(string $driver = null)
