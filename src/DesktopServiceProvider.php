@@ -4,7 +4,7 @@ namespace Ryan\Desktop;
 
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
-use Laravel\Socialite\Contracts\Factory;
+use Ryan\Desktop\Contracts\Factory;
 
 class DesktopServiceProvider extends ServiceProvider implements DeferrableProvider
 {
