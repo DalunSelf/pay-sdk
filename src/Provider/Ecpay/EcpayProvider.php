@@ -18,11 +18,13 @@ class EcpayProvider
 
     public function __construct()
     {
-        $this->merchantId = config('ecpay.MerchantId', '2000132');
-        $this->hashKey = config('ecpay.HashKey', '5294y06JbISpM5x9');
-        $this->hashIv = config('ecpay.HashIV', 'v77hoKGq4kWxNNIS');
+        $this->merchantId = config('ecpay.MerchantId', config('demoweb.ECPAY_MERCHANT_NUMBER', '2000132'));
+        $this->hashKey = config('ecpay.HashKey', config('demoweb.ECPAY_PAYMENT_HASH_KEY', '5294y06JbISpM5x9'));
+        $this->hashIv = config('ecpay.HashIV', config('demoweb.ECPAY_PAYMENT_HASH_IV', 'v77hoKGq4kWxNNIS'));
 
         $this->apiUrl = 'https://payment-stage.ecpay.com.tw/Cashier/AioCheckOut/V5';
+        if ($this->merchantId !== '2000132') $this->apiUrl = 'https://payment.ecpay.com.tw/Cashier/AioCheckOut/V5';
+
         $this->postData = [
             'MerchantID' => $this->merchantId,
         ];
